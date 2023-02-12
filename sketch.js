@@ -2,7 +2,9 @@ let angle = 0;
 let rotations = [];
 
 function setup() {
-  createCanvas(1280,800, WEBGL);
+  canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+  canvas.parent("sketch-container");
+  
   createEasyCam();
   document.oncontextmenu = ()=>false;
 }
@@ -61,4 +63,8 @@ function surroundingCircles(){
 
   }
   endShape();
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
